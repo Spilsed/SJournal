@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bjaqa6micsjj3"]
+
+[ext_resource type="FontFile" uid="uid://bemptaihmnjok" path="res://assets/fonts/IBMPlexMono-Medium.ttf" id="1_a6wei"]
+
+[resource]
+Button/font_sizes/font_size = 80
+Button/fonts/font = ExtResource("1_a6wei")
+Label/font_sizes/font_size = 90
+Label/fonts/font = ExtResource("1_a6wei")
