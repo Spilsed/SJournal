@@ -1,9 +1,11 @@
 extends Control
 
 @onready var title_label : Label = $VBoxContainer/Title
+@onready var page := preload("res://scenes/page.tscn")
 
 func _on_new_page_pressed():
-	pass # Replace with function body.
+	Globals.add_page()
+	var page_inst: Page = page.instantiate().set_script(Page.new())
 
 
 func _on_search_pages_pressed():
@@ -11,7 +13,7 @@ func _on_search_pages_pressed():
 
 
 func _on_quit_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
 
 
 func _on_hurry_pressed():

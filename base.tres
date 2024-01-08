@@ -7,3 +7,5 @@ Button/font_sizes/font_size = 80
 Button/fonts/font = ExtResource("1_a6wei")
 Label/font_sizes/font_size = 90
 Label/fonts/font = ExtResource("1_a6wei")
+RichTextLabel/font_sizes/normal_font_size = 30
+RichTextLabel/fonts/normal_font = ExtResource("1_a6wei")
