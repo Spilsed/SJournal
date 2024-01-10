@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://do23lkllg1atr"]
+
+[ext_resource type="Theme" uid="uid://bjaqa6micsjj3" path="res://base.tres" id="1_cmfnm"]
+[ext_resource type="Script" path="res://scenes/support/page_button.gd" id="2_oqqby"]
+
+[node name="PageButton" type="Button"]
+custom_minimum_size = Vector2(0, 40)
+offset_right = 640.0
+offset_bottom = 40.0
+theme = ExtResource("1_cmfnm")
+script = ExtResource("2_oqqby")
+
+[node name="PublicTitle" type="Label" parent="."]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 464.0
+offset_bottom = 35.0
+theme = ExtResource("1_cmfnm")
+theme_override_font_sizes/font_size = 20
+text = "SAMPLE TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_right = 488.0
+offset_bottom = 40.0
+
+[node name="Date" type="Label" parent="."]
+offset_left = 496.0
+offset_top = 8.0
+offset_right = 632.0
+offset_bottom = 35.0
+theme = ExtResource("1_cmfnm")
+theme_override_font_sizes/font_size = 20
+text = "01/01/1970"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
