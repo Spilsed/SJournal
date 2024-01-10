@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxjof0skanvlo"]
+
+[ext_resource type="Script" path="res://scenes/decrypt.gd" id="1_pfls2"]
+
+[node name="Decrypt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pfls2")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -40.0
+offset_right = 192.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Password" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Password"
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+secret = true
+
+[node name="ConfirmPassword" type="LineEdit" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+placeholder_text = "Confirm Password"
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+secret = true
+
+[node name="Error" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[connection signal="text_submitted" from="VBoxContainer/Password" to="." method="_on_password_text_submitted"]
+[connection signal="text_submitted" from="VBoxContainer/ConfirmPassword" to="." method="_on_password_text_submitted"]
