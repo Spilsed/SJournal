@@ -26,13 +26,39 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 16.0
+offset_right = -64.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 25
 
 [node name="TitleEdit" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_m32d8")
+placeholder_text = "Title"
+alignment = 1
+max_length = 30
+flat = true
 
-[node name="BodyText" type="RichTextLabel" parent="VBoxContainer"]
+[node name="BodyText" type="TextEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m32d8")
+placeholder_text = "Body"
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_m32d8")
-text = "New Page!"
+text = "BACK"
+
+[connection signal="text_submitted" from="VBoxContainer/TitleEdit" to="." method="_on_title_edit_text_submitted"]
+[connection signal="text_changed" from="VBoxContainer/BodyText" to="." method="_on_body_text_text_changed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
