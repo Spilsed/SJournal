@@ -1,11 +1,38 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bjaqa6micsjj3"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bjaqa6micsjj3"]
 
 [ext_resource type="FontFile" uid="uid://bemptaihmnjok" path="res://assets/fonts/IBMPlexMono-Medium.ttf" id="1_a6wei"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1yy2"]
+bg_color = Color(0.278431, 0.513726, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymaqg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxag2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eft8b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypx7v"]
+bg_color = Color(0.988235, 1, 1, 1)
+
 [resource]
-Button/font_sizes/font_size = 80
+Button/font_sizes/font_size = 30
 Button/fonts/font = ExtResource("1_a6wei")
-Label/font_sizes/font_size = 90
+Button/styles/normal = SubResource("StyleBoxFlat_q1yy2")
+CheckButton/font_sizes/font_size = 30
+CheckButton/fonts/font = ExtResource("1_a6wei")
+Label/font_sizes/font_size = 60
 Label/fonts/font = ExtResource("1_a6wei")
+LineEdit/font_sizes/font_size = 60
+LineEdit/fonts/font = ExtResource("1_a6wei")
 RichTextLabel/font_sizes/normal_font_size = 30
 RichTextLabel/fonts/normal_font = ExtResource("1_a6wei")
+TextEdit/colors/font_color = Color(1, 1, 1, 1)
+TextEdit/colors/selection_color = Color(0, 0.654902, 1, 1)
+TextEdit/font_sizes/font_size = 30
+TextEdit/fonts/font = ExtResource("1_a6wei")
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_ymaqg")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_mxag2")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_eft8b")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_ypx7v")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ypx7v")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_ypx7v")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="journal"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/decrypt.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,8 +21,8 @@ Globals="*res://globals.gd"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=1920
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/aspect="ignore"
 
 [dotnet]
@@ -31,4 +31,4 @@ project/assembly_name="journal"
 
 [rendering]
 
-renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
