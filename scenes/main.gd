@@ -31,12 +31,22 @@ func _on_search_pages_pressed():
 	browse_background.show()
 	update_browse_menu()
 
+func _on_settings_pressed():
+	settings_background.show()
+
+func _on_export_pressed():
+	for i in range(len(Globals.journal_data)):
+		DirAccess.open(Globals.save_path).make_dir("exports")
+		var file: FileAccess = FileAccess.open(Globals.save_path+"exports/export_"+str(i)+".txt", FileAccess.WRITE)
+		var entry: FileAccess = FileAccess.open(Globals.save_path+Globals.journal_data[i]["file_name"], FileAccess.READ)
+		var date_time_dict: Dictionary = Time.get_datetime_dict_from_unix_time(Globals.journal_data[i]["creation_date"])
+		var date: String = str(date_time_dict["month"]) + "/" + str(date_time_dict["day"]) + "/" + str(date_time_dict["year"])
+		
+		file.store_string(Globals.journal_data[i]["public_title"]+ " : " + date + "\n\n" + Globals.bytes_to_dict(Globals.aes_decrypt(entry.get_var()))["body_text"])
+
 func _on_quit_pressed():
 	Globals.save_journal_data()
 	get_tree().quit()
-
-func _on_settings_pressed():
-	settings_background.show()
 
 func _on_browse_back_pressed():
 	browse_background.hide()

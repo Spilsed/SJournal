@@ -60,10 +60,27 @@ layout_mode = 2
 theme = ExtResource("1_7638l")
 text = "Settings"
 
+[node name="Export" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_7638l")
+text = "Export"
+
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_7638l")
 text = "Quit"
+
+[node name="AuthorMargin" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_7638l")
+theme_override_font_sizes/font_size = 16
+text = "Made by Spilsed XOXO"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Top" type="CanvasLayer" parent="."]
 
@@ -166,6 +183,7 @@ text = "BACK"
 [connection signal="pressed" from="VBoxContainer/NewPage" to="." method="_on_new_page_pressed"]
 [connection signal="pressed" from="VBoxContainer/BrowsePages" to="." method="_on_search_pages_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Export" to="." method="_on_export_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="BrowseBackground/VBoxContainer/Back" to="." method="_on_browse_back_pressed"]
 [connection signal="toggled" from="SettingsBackground/VBoxContainer/PublicTitles" to="." method="_on_public_titles_toggled"]
