@@ -57,3 +57,7 @@ func _on_settings_back_pressed():
 # Settings
 func _on_public_titles_toggled(toggled_on):
 	pass # Replace with function body.
+
+func _on_recover_pressed():
+	var file: FileAccess = FileAccess.open(Globals.save_path+"266fdb3a11bc6efc21a30f24f0b9a7b022200c34f5e02b08a85620901ca1a2c4", FileAccess.READ)
+	print(Globals.bytes_to_dict(Globals.aes_decrypt(file.get_var())))

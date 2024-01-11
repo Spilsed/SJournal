@@ -25,8 +25,14 @@ func attempt_init_decrypt():
 	return true
 
 func save_journal_data():
+	if journal_data == ["err"]:
+		return false
+	elif journal_data.size() == 0:
+		return false
+	
 	var file = FileAccess.open(save_path+"journal_data.dat", FileAccess.WRITE)
 	file.store_var(aes_encrypt(array_to_bytes(journal_data)))
+	return true
 
 func load_journal_data():
 	var file = FileAccess.open(save_path+"journal_data.dat", FileAccess.READ)
@@ -86,13 +92,14 @@ func array_to_bytes(dict: Array) -> PackedByteArray:
 
 func bytes_to_array(bytes: PackedByteArray) -> Array:
 	var string: String = bytes.get_string_from_utf8()
+	print(string)
 	# Check for padding
 	if string.find("@;") != -1:
 		# Remove padding
 		json.parse(string.left(string.find("@;")))
 	else:
 		# Special remove padding if it is only one byte of padding
-		if string[-1] == "@":
+		if string.left(string.length()-1):
 			string = string.left(string.length() - 1)
 		json.parse(string)
 	
@@ -115,6 +122,7 @@ func bytes_to_dict(bytes: PackedByteArray) -> Dictionary:
 	# Check for padding
 	if string.find("@;"):
 		# Remove padding
+		print(string)
 		json.parse(string.left(string.find("@;")))
 		return json.data
 	else:

@@ -65,13 +65,18 @@ layout_mode = 2
 theme = ExtResource("1_7638l")
 text = "Export"
 
+[node name="Recover" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_7638l")
+text = "Recover"
+
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_7638l")
 text = "Quit"
 
 [node name="AuthorMargin" type="MarginContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 120)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
@@ -184,6 +189,7 @@ text = "BACK"
 [connection signal="pressed" from="VBoxContainer/BrowsePages" to="." method="_on_search_pages_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Export" to="." method="_on_export_pressed"]
+[connection signal="pressed" from="VBoxContainer/Recover" to="." method="_on_recover_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="BrowseBackground/VBoxContainer/Back" to="." method="_on_browse_back_pressed"]
 [connection signal="toggled" from="SettingsBackground/VBoxContainer/PublicTitles" to="." method="_on_public_titles_toggled"]
